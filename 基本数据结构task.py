@@ -1,45 +1,54 @@
-#!/bin/python3
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
 
-class Restaurant():
+This is a temporary script file.
+"""
 
- def __init__(self,name,cuisine_type):
-  self.name = name
-  self.cuisine_type = cuisine_type
-  self.number_served = 0
-   
- def describe_restaurant(self):
-  print(self.name.title()+'主营'+self.cuisine_type)
-    
- def open_restaurant(self):
-  print(self.name.title()+'餐馆正在营业')
 
- def served(self):
-  print(str(self.number_served)+ '已经接待.')
-  
- def set_number_served(self,count):
-    if count >= self.number_served:
-       self.number_served = count
-    else:
-      print('搞错了!')
-      
- def increment_number_served(self,miles):
-   self.number_served += miles
-   
-   
-   
+import turtle
+t1=turtle.Turtle()
 
-restaurant=Restaurant('haha','hotspot')
-restaurant.describe_restaurant()
-restaurant.open_restaurant()
+
+#六角彩
+def draw():
+    t1.forward(15)
+    t1.right(60)
+    t1.fd(30)
+    t1.left(60)
+    t1.fd(30)
+    return
+
+color=['gray','blue','green','yellow','red','purple']
+for i in range(6):   
+    t1.pencolor(color[i])
+    t1.left(90)
+    draw()
+    t1.right(150)
+
+turtle.done()
 
 
 
-restaurant.number_served=20
-restaurant.served()
+#填充三个半圆
+def semi():
+  t1.color('blue','yellow')
+  t1.begin_fill()
+  t1.forward(100)
+  t1.left(90)
+  t1.circle(50,180)
+  t1.left(90)
+  t1.end_fill()
+  return
 
-restaurant.set_number_served(10)
-restaurant.served()
+t1.left(60)
+semi()
+t1.forward(100)
+t1.right(120)
+semi()
+t1.forward(100)
+t1.right(120)
+semi()
 
-restaurant.increment_number_served(5)
-restaurant.served()
-    
+turtle.done()
+
